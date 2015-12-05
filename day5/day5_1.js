@@ -7,8 +7,7 @@ var fs = require('fs'),
 
 fs.readFile(filename, 'utf8', function(err, data) {
 	var lines = data.split('\n'),
-		niceStringsCount = 0,
-		vowels = ['a','e','i','o','u'];
+		niceStringsCount = 0;
 	for (var i = 0; i < lines.length; i++){
 		if (/(ab)|(cd)|(pq)|(xy)/.test(lines[i])) continue;
 		if (!/(.*[aeiou]){3}/.test(lines[i])) continue;
