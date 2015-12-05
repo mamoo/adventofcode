@@ -12,12 +12,6 @@ fs.readFile(filename, 'utf8', function(err, data) {
 	for (var i = 0; i < lines.length; i++){
 		if (/(ab)|(cd)|(pq)|(xy)/.test(lines[i])) continue;
 		if (!/(.*[aeiou]){3}/.test(lines[i])) continue;
-						
-		var lettersMap = {};
-		for (var character in lines[i]){
-			if (!lettersMap[character]) lettersMap[character] = 1;
-			else lettersMap[character]++;
-		}
 		
 		var hasDouble = false;
 		lines[i].split('').reduce(function(previous, current, currentIndex, array) {
