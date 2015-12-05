@@ -11,14 +11,8 @@ fs.readFile(filename, 'utf8', function(err, data) {
 		vowels = ['a','e','i','o','u'];
 	for (var i = 0; i < lines.length; i++){
 		if (/(ab)|(cd)|(pq)|(xy)/.test(lines[i])) continue;
-		var differentVowelsCount = 0;
-		for (var j = 0; j < vowels.length; j++){
-			var regex = new RegExp(vowels[j], 'g');
-			differentVowelsCount = differentVowelsCount + (lines[i].match(regex) ? lines[i].match(regex).length : 0);
-			if (differentVowelsCount > 2) break; 
-		}
-		if (differentVowelsCount < 3) continue;
-				
+		if (!/(.*[aeiou]){3}/.test(lines[i])) continue;
+						
 		var lettersMap = {};
 		for (var character in lines[i]){
 			if (!lettersMap[character]) lettersMap[character] = 1;
