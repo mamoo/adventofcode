@@ -14,7 +14,7 @@ function parseCommand(line){
 		y_end: Number(parsed[3])
 	};
 	if (line.indexOf('toggle') === 0) command.value = 'TOGGLE';
-	else command.value = line.indexOf('turn on') > -1;	
+	else command.value = line.indexOf('turn on') > -1 ? 'ON' : 'OFF';	
 	return command;	
 }
 
@@ -27,15 +27,25 @@ fs.readFile(filename, 'utf8', function(err, data) {
 		var command = parseCommand(lines[i]);
 		for (var y = command.y; y <= command.y_end; y++){
 			for (var x = command.x; x <= command.x_end; x++) {
-				matrix[y][x] = command.value === 'TOGGLE' ? Number(!matrix[y][x]) : Number(command.value);
+				switch (command.value) {
+					case 'ON':
+						matrix[y][x] = matrix[y][x] + 1;
+						break; 
+					case 'OFF':
+						matrix[y][x] = matrix[y][x] > 0 ? matrix[y][x] - 1 : 0;
+						break;
+					case 'TOGGLE':
+						matrix[y][x] = matrix[y][x] + 2;
+						break;
+				}
 			}
 		}
 	}
-	var litNumber = 0
+	var totalBrightness = 0
 	for (var i = 0; i < matrix.length; i++){
-		litNumber = litNumber + matrix[i].reduce(function(previousValue, currentValue, currentIndex, array) {
+		totalBrightness = totalBrightness + matrix[i].reduce(function(previousValue, currentValue, currentIndex, array) {
 			return previousValue + currentValue;
 		});
 	}
-	console.log('There are ' + litNumber + ' lit lights');
+	console.log('The brightness of all lights is ' + totalBrightness);
 });
