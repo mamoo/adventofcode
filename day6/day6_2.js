@@ -1,6 +1,7 @@
 /**
  * Answer to Advent of Code, day 6 Challenge
  * http://adventofcode.com/day/6
+ * Part 2
  */
 var fs = require('fs'),
 	filename = "input.txt";
