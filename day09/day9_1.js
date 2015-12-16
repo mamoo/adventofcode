@@ -1,3 +1,7 @@
+/**
+ * Solution of Advent of Code, day 8 Challenge
+ * http://adventofcode.com/day/9
+ */
 var fs = require('fs'),
 	_ = require('lodash'),
 	Combinatorics = require('js-combinatorics'),
