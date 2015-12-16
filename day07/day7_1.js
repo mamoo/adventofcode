@@ -1,5 +1,5 @@
 /**
- * Answer to Advent of Code, day 7 Challenge
+ * Solution of Advent of Code, day 7 Challenge
  * http://adventofcode.com/day/7
  */
 var fs = require('fs'),
