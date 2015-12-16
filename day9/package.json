@@ -1,0 +1,16 @@
+{
+  "name": "day9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "day9_1.js",
+  "dependencies": {
+    "js-combinatorics": "^0.5.0",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
