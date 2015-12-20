@@ -5,10 +5,12 @@
 var fs = require('fs'),
 	Combinatorics = require('js-combinatorics'),
 	_ = require('lodash'),
+	pivot,
 	seatings = {};
 
 function getHappiness(array){
 	var happiness = 0;
+	array.push(pivot);
 	for(var i = 0; i < array.length; i++){
 		var person = array[i],
         	before = array[(i - 1 + array.length) % array.length],
@@ -27,6 +29,8 @@ fs.readFile("input.txt", 'utf8', function(err, data) {
 		if (!seatings[guest1]) seatings[guest1] = {};
 			seatings[guest1][guest2] = tokens[2] === 'gain' ? parseInt(tokens[3]) : parseInt(tokens[3]) * -1;
 	});	
-	var permutations = Combinatorics.permutation(_.uniq(Object.keys(seatings)));
+	var guests = _.uniq(Object.keys(seatings));
+	pivot = guests.pop();
+	var permutations = Combinatorics.permutation(guests);
 	console.log(Math.max.apply(0, permutations.map(getHappiness)));	
 });
