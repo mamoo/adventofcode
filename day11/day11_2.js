@@ -1,5 +1,5 @@
 /**
- * Solution of Advent of Code, day 10 Challenge
+ * Solution of Advent of Code, day 11 Challenge
  * http://adventofcode.com/day/11
  * Part 2
  */
