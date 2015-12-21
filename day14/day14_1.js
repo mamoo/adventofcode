@@ -11,9 +11,9 @@ fs.readFile("input.txt", 'utf8', function(err, data) {
 			speed = parseInt(tokens[2]),
             travelTime = parseInt(tokens[3]),
             rest = parseInt(tokens[4]),
-            distance = speed * travelTime;
-        var cycleTime = travelTime + rest;
-        var covered = (Math.floor(inputTime / cycleTime) * distance + Math.min(travelTime, (inputTime % cycleTime)) * speed);
+            distance = speed * travelTime,
+            cycleTime = travelTime + rest,
+            covered = (Math.floor(inputTime / cycleTime) * distance + Math.min(travelTime, (inputTime % cycleTime)) * speed);
         coveredDistance = Math.max(coveredDistance, covered);
 	});
     console.log(coveredDistance);		
