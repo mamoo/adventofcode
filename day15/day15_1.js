@@ -5,17 +5,9 @@
  */
 function findCombinations(){
     var combinations = [];
-    for (a = 1; a < 98; a++){
-        for (b = 1; b < 98; b++){
-            for (c = 1; c < 98; c++){
-                for (d = 1; d < 98; d++){
-                    if (a+b+c+d === 100) {
-                        combinations.push([a, b, c, d]);
-                    }
-                }
-            }
-        }
-    }
+    for (a = 1; a < 98; a++) for (b = 1; b < 98; b++)
+        for (c = 1; c < 98; c++) for (d = 1; d < 98; d++)
+            if (a+b+c+d === 100) combinations.push([a, b, c, d]);
     return combinations;
 }
 
