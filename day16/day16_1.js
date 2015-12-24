@@ -17,8 +17,7 @@ var fs = require('fs'),
 		perfumes: 1
 	},
 	regex = /Sue\s(\d+)\:\s([a-z]+)\:\s(\d+),\s([a-z]+)\:\s(\d+),\s([a-z]+)\:\s(\d+)/,
-	aunts = [],
-	scores = [];
+	aunts = [];
 fs.readFile("input.txt", 'utf8', function(err, data) {
 	data.split('\n').forEach(function(auntInfo){
 		var tokens = auntInfo.match(regex),
