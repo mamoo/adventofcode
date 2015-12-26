@@ -1,0 +1,22 @@
+{
+  "name": "day19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "day19_1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamoo/adventofcode.git"
+  },
+  "author": "m.pedriale@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamoo/adventofcode/issues"
+  },
+  "homepage": "https://github.com/mamoo/adventofcode#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
